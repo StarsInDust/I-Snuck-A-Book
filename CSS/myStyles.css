@@ -59,7 +59,7 @@
   
   list-style: none;
   margin: 0; 
-  background-color: #0020d26;
+  background-color: #002654;
 }
 
 .nav a {
@@ -67,7 +67,7 @@
   display: block;
   padding: 1em;
   color: #9e8c69;
-  background-color: #0020d26;
+  background-color: #002654;
 }
 
 .nav a:hover {
@@ -709,7 +709,8 @@ h1.center {
 	background-color: #000000;
 	column-gap: 10px;
 	row-gap: 10px;
-	max-width:1050px;
+	max-width: 1200px;
+	width: 95%;
 	padding: 3px;
 	margin-top: auto;
 	margin-right: auto;
