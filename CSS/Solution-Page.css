@@ -1,50 +1,170 @@
 @charset "utf-8";
-/* CSS Document */
+/* ============================================
+   CSS Document - Solution Page Specific Styles
+   ============================================ */
 
- body {
-	background-color: #000000;
-	margin-left: 20px;
-	margin-top: 10px;
-	margin-right: 20px;
-	margin-bottom: 10px;
+/* ==================== 
+   BASE STYLES 
+   ==================== */
+/* Base body styles - consolidated and specific to solution page */
+body {
+    background-color: #000000 !important; /* Override any conflicting styles */
+    margin: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: Verdana, Geneva, sans-serif;
 }
-    .carelessBrown {
-	font-family: Georgia, "Times New Roman", Times, serif;
-	font-size: 18px;
-	font-weight: 600;
-	color: #677865;
+
+/* ==================== 
+   TYPOGRAPHY 
+   ==================== */
+
+/* Main Title - Consistent with Home Page */
+.mainTitle, 
+header .mainTitle,
+#container header .mainTitle {
+    font-family: Georgia, "Times New Roman", Times, serif !important;
+    font-size: 28px !important;
+    font-weight: bold !important;
+    color: #E7C88F !important;
+    text-align: center !important;
+    margin-bottom: 20px !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
 }
-    h6 {
-	font-size: 13px;
-	font-family: Verdana, Geneva, sans-serif;
-	line-height: 21px;
-	color: #b2bfaa;
-	
+
+.carelessBrown {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #677865;
 }
+
+h6 {
+    font-size: 13px;
+    font-family: Verdana, Geneva, sans-serif;
+    line-height: 21px;
+    color: #b2bfaa;
+}
+
+/* Header and title styles */
+.h1Special {
+    color: #9e8c69;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+/* Container specific header styling */
 #container header .h1Special {
-	color: #9e8c69;
-	font-size: 20px;
-	font-weight: 700;
-	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    color: #9e8c69;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
-
- .h1Special {
-	color: #9e8c69;
-	font-size: 20px;
-	font-weight: 700;
-	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-}
-
+/* Text content styles */
 .innerText .turquoiseText {
-	color: #8fc5c7 !important;
-	font-size: 22px;
-	font-weight: 700;
-	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-	
+    color: #8fc5c7 !important;
+    font-size: 22px;
+    font-weight: 700;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
+/* ==================== 
+   LAYOUT COMPONENTS 
+   ==================== */
 header .watchItDiv {
-	text-align: center;
-	padding-top: 30px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.WatchItCenter {
+    display: block;
+    height: 177px;
+    width: 400px;
+    margin: 0 auto;
+}
+
+/* ==================== 
+   DOWNLOAD SECTIONS 
+   ==================== */
+.download-section {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.download-section h3 {
+    color: #9e8c69;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    margin-bottom: 10px;
+}
+
+.download-section a {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.download-section a:hover {
+    transform: scale(1.05);
+}
+
+.download-section img {
+    border-radius: 4px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* ==================== 
+   LAYOUT OVERRIDES 
+   ==================== */
+/* Override any conflicting layout styles from myStyles.css */
+.special-main-container {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 20px !important;
+    margin-top: 30px !important;
+}
+
+#center-content {
+    flex-grow: 1 !important;
+    background-color: #111111 !important;
+    padding: 20px !important;
+    border-radius: 2em !important;
+    box-shadow: 1px 3px 8px black !important;
+}
+
+#left-content {
+    flex-shrink: 0 !important;
+    padding: 10px !important;
+}
+
+/* ==================== 
+   RESPONSIVE TYPOGRAPHY
+   ==================== */
+
+/* Ensure typography stays consistent across all screen sizes */
+@media screen and (min-width: 300px) {
+    .mainTitle, 
+    header .mainTitle,
+    #container header .mainTitle {
+        font-family: Georgia, "Times New Roman", Times, serif !important;
+        font-size: 24px !important;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .mainTitle, 
+    header .mainTitle,
+    #container header .mainTitle {
+        font-family: Georgia, "Times New Roman", Times, serif !important;
+        font-size: 28px !important;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .mainTitle, 
+    header .mainTitle,
+    #container header .mainTitle {
+        font-family: Georgia, "Times New Roman", Times, serif !important;
+        font-size: 32px !important;
+    }
 }

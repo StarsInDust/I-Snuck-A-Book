@@ -1,5 +1,26 @@
 @charset "utf-8";
-/* CSS Document */
+/* CSS Document - Product Page Specific Styles */
+
+/* ==================== 
+   TYPOGRAPHY - Consistent Main Title
+   ==================== */
+
+/* Main Title - Consistent with Home Page */
+.mainTitle, 
+header .mainTitle,
+#container header .mainTitle {
+    font-family: Georgia, "Times New Roman", Times, serif !important;
+    font-size: 28px !important;
+    font-weight: bold !important;
+    color: #E7C88F !important;
+    text-align: center !important;
+    margin-bottom: 20px !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* ==================== 
+   EXISTING STYLES
+   ==================== */
 
          
 .policy a {
@@ -239,7 +260,38 @@ h1.center {
 ul button {
 	padding-top: 2.5px;
 	padding-bottom: 2.5px;
+}
 
+/* ==================== 
+   RESPONSIVE TYPOGRAPHY
+   ==================== */
+
+/* Ensure typography stays consistent across all screen sizes */
+@media screen and (min-width: 300px) {
+    .mainTitle, 
+    header .mainTitle,
+    #container header .mainTitle {
+        font-family: Georgia, "Times New Roman", Times, serif !important;
+        font-size: 24px !important;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .mainTitle, 
+    header .mainTitle,
+    #container header .mainTitle {
+        font-family: Georgia, "Times New Roman", Times, serif !important;
+        font-size: 28px !important;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .mainTitle, 
+    header .mainTitle,
+    #container header .mainTitle {
+        font-family: Georgia, "Times New Roman", Times, serif !important;
+        font-size: 32px !important;
+    }
 }
 
 

@@ -1,19 +1,112 @@
 @charset "utf-8";
-/* CSS Document */
+/* ============================================
+   CSS Document - Home Page Specific Styles
+   ============================================ */
 
+/* ==================== 
+   BASE STYLES 
+   ==================== */
 body {
-	background-color: #000000;
-	margin-left: 20px;
-	margin-top: 10px;
-	margin-right: 20px;
-	margin-bottom: 10px;
+    background-color: #000000;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    font-family: Verdana, Geneva, sans-serif; /* Base sans-serif for body */
 }
-  
 
-    #container .special-main-container #center-content .innerText {
-	text-align: center;
+/* ==================== 
+   TYPOGRAPHY HIERARCHY
+   ==================== */
+
+/* Main Title - Elegant Serif Font */
+.mainTitle, 
+header .mainTitle,
+#container header .mainTitle {
+    font-family: Georgia, "Times New Roman", Times, serif !important;
+    font-size: 28px !important;
+    font-weight: bold !important;
+    color: #E7C88F !important;
+    text-align: center !important;
+    margin-bottom: 20px !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
 }
-    #center-content .innerText img {
-	padding-top: 40px;
-	
+
+/* Secondary Headings - Also Serif */
+#container header h4,
+header h4 {
+    font-family: Georgia, "Times New Roman", Times, serif !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    font-variant: small-caps !important;
+    color: #E7C88F !important;
+    text-align: center !important;
+    padding-right: 30px !important;
+    padding-left: 30px !important;
+    line-height: 1.4 !important;
+}
+
+/* Navigation - Clean Sans-serif for Better Readability */
+nav ul li a {
+    font-family: Verdana, Geneva, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    color: #9e8c69 !important;
+}
+
+nav ul li a:hover {
+    color: #C4B97B !important;
+}
+
+nav ul li a.active {
+    color: #ebebee !important;
+    font-weight: bold !important;
+}
+
+/* ==================== 
+   LAYOUT COMPONENTS 
+   ==================== */
+
+/* Center content styling */
+#container .special-main-container #center-content .innerText {
+    text-align: center;
+}
+
+#center-content .innerText img {
+    padding-top: 40px;
+    box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+}
+
+/* ==================== 
+   RESPONSIVE OVERRIDES
+   ==================== */
+
+/* Ensure typography stays consistent across all screen sizes */
+@media screen and (min-width: 300px) {
+    .mainTitle, 
+    header .mainTitle,
+    #container header .mainTitle {
+        font-family: Georgia, "Times New Roman", Times, serif !important;
+        font-size: 24px !important;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .mainTitle, 
+    header .mainTitle,
+    #container header .mainTitle {
+        font-family: Georgia, "Times New Roman", Times, serif !important;
+        font-size: 28px !important;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .mainTitle, 
+    header .mainTitle,
+    #container header .mainTitle {
+        font-family: Georgia, "Times New Roman", Times, serif !important;
+        font-size: 32px !important;
+    }
 }

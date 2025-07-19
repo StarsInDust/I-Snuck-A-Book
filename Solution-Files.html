@@ -9,34 +9,7 @@
 <link rel="shortcut icon" href="Images/favicon.ico" type="image/x-icon">
     
 
-    <style type="text/css">
-    body {
-	background-color: #001D06;
-	margin-left: 20px;
-	margin-top: 10px;
-	margin-right: 20px;
-	margin-bottom: 10px;
-}
-    .carelessBrown {
-	font-family: Georgia, "Times New Roman", Times, serif;
-	font-size: 18px;
-	font-weight: 600;
-	color: #C08243;
-}
-    h6 {
-	font-size: 13px;
-	font-family: Verdana, Geneva, sans-serif;
-	line-height: 21px;
-}
-    .WatchItCenter {
-	align-items: center;
-	justify-content: center;
-	height: 177px;
-	width: 400px;
-	margin-right: auto;
-	margin-left: auto;
-}
-    </style>
+    <!-- Inline styles moved to Solution-Page.css for better organization -->
 
 <link href="CSS/myStyles.css" rel="stylesheet" type="text/css">
 
@@ -51,45 +24,31 @@
 
     <div id = "container">
 
-        <div id="banner-img" class="home">
-            
+        <div id="banner-img" class="home"></div>
 
-          </div>
-
-
-          <nav>
+        <nav>
             <ul>
-              
-  
-               <li><a href="index.html" title="Home">&#9729;</a></li>
-                <li><a href="Books-Products.html" title="Products"> Books-Products</a></li>
+                <li><a href="index.html" title="Home">&#9729;</a></li>
+                <li><a href="Books-Products.html" title="Products">Books-Products</a></li>
                 <li><a href="Solution-Files.html" class="active" title="Solution-Files">Solution-Files</a></li>
                 <li><a href="About.html" title="About">About</a></li>
-
-              </ul>
-            </nav> 
+            </ul>
+        </nav> 
 
 
 
           <header>
-          
-          <div class= "watchItDiv">
-            <h1>~Solution-Files~</h1>
-
-          
-           
-           <h2 class="carelessBrown">How to Download These Free files to your computer </h2>
-           
-           
-       <h6>First make sure you follow the directions in the first chapter of ~ The-Beginning ~ to download Visual Studio Code. </h6>
-       
-              
-            <img src="Images/Watch-it-Plaque.png" class="WatchItCenter"   >
-            
-            <h6>See those little images of the zip file below? Just click on each one, to download the solution files to your own computer.  </h6>
-<p class="h1Special">DownLoadable Zip Files</p>
-            
-
+            <div class="watchItDiv">
+                <h1 class="mainTitle">~Solution-Files~</h1>
+                <h2 class="carelessBrown">How to Download These Free files to your computer</h2>
+                
+                <h6>First make sure you follow the directions in the first chapter of ~ The-Beginning ~ to download Visual Studio Code.</h6>
+                
+                <img src="Images/Watch-it-Plaque.png" class="WatchItCenter" alt="Watch It Plaque">
+                
+                <h6>See those little images of the zip file below? Just click on each one, to download the solution files to your own computer.</h6>
+                
+                <p class="h1Special">DownLoadable Zip Files</p>
             </div>
           </header>
                    
@@ -97,82 +56,63 @@
                             
         
                
-        <div class="special-main-container">    
+        <main class="special-main-container">    
           <div id="left-content">
-           
-            <p><img src="Images/Spade-and-Heart-Smaller.png" width="149" class="alignCenter"></p>
-
+            <p><img src="Images/Spade-and-Heart-Smaller.png" width="149" class="alignCenter" alt="Spade and Heart decoration"></p>
           </div>
         
           <div id="center-content">
             <div class="innerText">
-            <p class="turquoiseText">Python &amp; Visual Studio Code Solution Files</p>
-            
-              <h3>Book 1 - The Beginning</h3>
-              <p><a href="Zips/1 Solution Files The Beginning.zip"><img src="Images/zip-file.png" width="94" height="89"></a> </p>
+              <p class="turquoiseText">Python &amp; Visual Studio Code Solution Files</p>
               
-              <h3>Book 2 - The GUI</h3>
-              <p><a href="Zips/2 Solution Files The GUI.zip"><img src="Images/zip-file.png" width="94" height="89"></a> </p>
+              <section class="download-section">
+                <h3>Book 1 - The Beginning</h3>
+                <p><a href="Zips/1 Solution Files The Beginning.zip" aria-label="Download Book 1 Solution Files">
+                  <img src="Images/zip-file.png" width="94" height="89" alt="Download zip file">
+                </a></p>
+              </section>
               
+              <section class="download-section">
+                <h3>Book 2 - The GUI</h3>
+                <p><a href="Zips/2 Solution Files The GUI.zip" aria-label="Download Book 2 Solution Files">
+                  <img src="Images/zip-file.png" width="94" height="89" alt="Download zip file">
+                </a></p>
+              </section>
               
-            <h3>Book 3 - Advanced</h3>
-            <p><a href="Zips/3 Solution File Advanced.zip"><img src="Images/zip-file.png" width="94" height="89"></a></p>
-              
+              <section class="download-section">
+                <h3>Book 3 - Advanced</h3>
+                <p><a href="Zips/3 Solution File Advanced.zip" aria-label="Download Book 3 Solution Files">
+                  <img src="Images/zip-file.png" width="94" height="89" alt="Download zip file">
+                </a></p>
+              </section>
             </div>
-          
           </div>
-        </div>
+        </main>
           
-          
-  <!--  Second Div - COMMENTED OUT FOR NOW
-  
-  
-   <div class="special-main-container">    
+        <!-- Commented out secondary section for future use -->
+        <!--  
+        <section class="special-main-container">    
           <div id="left-content">
-           
-            <p><img src="Images/Spade-and-Heart-Smaller.png" width="149" class="alignCenter"></p>
-
+            <p><img src="Images/Spade-and-Heart-Smaller.png" width="149" class="alignCenter" alt="Spade and Heart decoration"></p>
           </div>
         
           <div id="center-content">
             <div class="innerText">
-             
-             <p class="turquoiseText">Flex Box &amp; Visual Studio Code Solution Files</p> 
-              
-              <p><a href="Zips/Flex Box Solution Files.zip"><img src="Images/zip-file.png" width="94" height="89"></a> </p>
-              
-              <h3>&nbsp;</h3>
-              <p>&nbsp;</p>
-              
-              
-            <h3>&nbsp;</h3>
-            <p>&nbsp;</p>
-              
+              <p class="turquoiseText">Flex Box &amp; Visual Studio Code Solution Files</p> 
+              <p><a href="Zips/Flex Box Solution Files.zip" aria-label="Download Flex Box Solution Files">
+                <img src="Images/zip-file.png" width="94" height="89" alt="Download zip file">
+              </a></p>
             </div>
-          
           </div>
-  
-  
-  
-  </div>  
-        <br>
+        </section>  
+        -->
         
-  END COMMENT -->
-        
-        
-        
-        
-        </div>
-        
-                <br>
-<br>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-        
-        
-        <footer class="footer"> ~ by StarsInDust ~  &#169 2023 –
-  <script type="text/javascript" src ="JavaScript/FooterYearlyDate.js">
-</script></footer>
+    </div>
+    
+    <footer class="footer">
+        ~ by StarsInDust ~  &#169; 2023 –
+        <script type="text/javascript" src="JavaScript/FooterYearlyDate.js"></script>
+    </footer>
         
     
 </body>
