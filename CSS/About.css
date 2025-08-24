@@ -31,3 +31,6 @@
 	padding-bottom: 30px;
 	padding-left: 30px;
 }
+.innerText ol li {
+	line-height: 20px;
+}

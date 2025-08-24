@@ -69,6 +69,7 @@ body footer {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax( 250px,1fr));
 	gap: 20px;
+	justify-items: start; /* Align each grid item (book section) to the left */
 }
 
 .responsiveItem {
@@ -76,15 +77,40 @@ body footer {
 	font-size: 0.77rem;
 	line-height: 1.7;
 	overflow: hidden;
-	
-	}
+	text-align: center; /* Center everything for elegant layout */
+}
+
+/* Control h2 text wrapping and alignment - center just the title */
+.responsiveItem h2 {
+	width: 100%;
+	max-width: 250px; /* Match the grid min-width */
+	margin: 10px auto; /* Center the h2 block itself */
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	hyphens: auto;
+	text-align: center; /* Center only the h2 text */
+	line-height: 1.3;
+	padding: 0 10px; /* Add some padding for breathing room */
+}
+
+/* Keep images centered and responsive */
+.responsiveItem img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin: 0 auto; /* Center the images */
+}
+
 .gridLayout .responsiveItem img {
 	width: auto;
 }
 .gridLayout .responsiveItem aside ul {
 	list-style-type: none;
-	display:flex;
-	justify-content: space-between;
+	display: flex;
+	justify-content: center; /* Center the price/icon pair */
+	align-items: center; /* Keep them vertically aligned */
+	gap: 8px; /* Small gap between price and icon */
+	margin: 10px 0; /* Add some spacing */
 }
 .gridLayout .responsiveItem aside button {
 	background-color: #035f16;
@@ -100,7 +126,8 @@ body footer {
 	font-size: 13px;
 	text-transform: uppercase;
 	display: block;
-	width: 1fr;
+	width: auto; /* Change from 1fr to auto for better centering */
+	margin: 10px auto; /* Center the button */
 	box-shadow: 3px 5px 10px black;
 	padding-top: 2.5;
 	padding-right: 3em;
@@ -117,22 +144,7 @@ body footer {
 
 
 
-.gridLayout {
-	
-	max-width:1100px;
-	margin: 20px auto;
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax( 250px,1fr));
-	gap: 20px;
-}
-
-.responsiveItem {
-	padding:20px;
-	font-size: 0.77rem;
-	line-height: 1.7;
-	overflow: hidden;
-	
-	}
+/* Duplicate rules removed - using the main definitions above */
 	
 	.gridLayout .responsiveItem aside button {
 	padding-top: 10px;
@@ -152,11 +164,7 @@ body footer {
 .gridLayout .responsiveItem img {
 	width: auto;
 }
-.gridLayout .responsiveItem aside ul {
-	list-style-type: none;
-	display:flex;
-	justify-content: space-between;
-}
+/* Duplicate aside ul rule removed - using the centered version above */
 
 .gridLayout .responsiveItem aside ul li {
 	background: #000000;
@@ -261,6 +269,28 @@ ul button {
 	padding-top: 2.5px;
 	padding-bottom: 2.5px;
 }
+
+
+.book-format {
+  display: inline-block;
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #fff;
+  background: #2e8b57; /* or #0074d9, #b22222, etc. */
+  padding: 0.2em 0.8em;
+  border-radius: 1em;
+  box-shadow: 0 2px 8px rgba(44,62,80,0.15);
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px #2226;
+  margin-bottom: 0.3em;
+}
+
+
+
+
+
+
+
 
 /* ==================== 
    RESPONSIVE TYPOGRAPHY
