@@ -16,7 +16,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Free PDF Optimizer Tool - Compress PDFs Online">
     <meta property="og:description" content="Professional PDF compression with 70%+ size reduction. Free tool by I Snuck A Book publishers. Try it now and explore our book collection!">
-    <meta property="og:image" content="Complete_Technology_Package/Images/Banner.png">
+    <meta property="og:image" content="Images/Banner.png">
     <meta property="og:url" content="https://yoursite.com/PDF_Optimizer.html">
     <meta property="og:site_name" content="I Snuck A Book">
     
@@ -24,7 +24,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Free PDF Optimizer Tool | I Snuck A Book">
     <meta name="twitter:description" content="Free professional PDF compression tool. Reduce file size by 70%+ instantly. No signup required!">
-    <meta name="twitter:image" content="Complete_Technology_Package/Images/Banner.png">
+    <meta name="twitter:image" content="Images/Banner.png">
     
     <!-- Additional SEO Enhancement -->
     <meta name="theme-color" content="#722f37">
@@ -39,6 +39,12 @@
     <link rel="shortcut icon" href="Images/favicon.ico" type="image/x-icon">
     <link href="CSS/myStyles.css" rel="stylesheet" type="text/css">
     <link href="CSS/PDF-Optimizer.css" rel="stylesheet" type="text/css">
+    
+    <!-- Ghostscript WebAssembly for Real PDF Compression -->
+    <script>
+        // Ghostscript WebAssembly configuration
+        window.gs_wasm_url = 'https://cdn.jsdelivr.net/gh/krmanik/local-pdf-tools@main/src/lib/gs-worker.js';
+    </script>
     
     <!-- JSON-LD Structured Data for Rich Search Results -->
     <script type="application/ld+json">
@@ -87,15 +93,27 @@
                 <li><a href="Books-Products.html" title="Products">Books-Products</a></li>
                 <li><a href="Childrens-Books.html" title="Children's Book Nook">Children's Book Nook</a></li>
                 <li><a href="Solution-Files.html" title="Solution-Files">Solution-Files</a></li>
-                <li><a href="PDF_Optimizer.html" class="active" title="PDF Optimizer">PDF Optimizer</a></li>
+                <li><a href="PDF_Optimizer_Launcher.html" title="PDF Optimizer Pro - Desktop App">PDF Optimizer Pro</a></li>
                 <li><a href="About.html" title="About">About</a></li>
             </ul>
         </nav>
         
         <main class="pdf-main">
             <div class="pdf-container">
-                <!-- Left Panel -->
-                <div class="left-panel">
+                <!-- Desktop Version Recommendation -->
+                <div class="desktop-recommendation">
+                    <h2>🚀 Get Better Results with Desktop Version!</h2>
+                    <p>For guaranteed 70%+ compression and the best experience, use our desktop application:</p>
+                    <a href="PDF_Optimizer_Launcher.html" class="desktop-btn">
+                        📱 Use PDF Optimizer Pro Desktop App
+                    </a>
+                    <p class="web-note">Or continue with the web version below (requires server setup)</p>
+                </div>
+                
+                <!-- Panels Container -->
+                <div class="panels-container">
+                    <!-- Left Panel -->
+                    <div class="left-panel">
                     <!-- File Selection -->
                     <div class="file-section">
                         <h3> Select PDF File</h3>
@@ -114,6 +132,23 @@
                                 <span class="file-name" id="fileName"></span>
                                 <button class="clear-file" id="clearFile"></button>
                             </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Start Instructions -->
+                    <div class="setup-instructions" id="setupInstructions" style="display: block;">
+                        <h3>⚡ Ready to Use - No Setup Required!</h3>
+                        <div class="instruction-content">
+                            <p><strong>This version works immediately:</strong></p>
+                            <ol>
+                                <li>Select your PDF file below</li>
+                                <li>Choose your preferred compression level</li>
+                                <li>Download your optimized PDF instantly!</li>
+                            </ol>
+                            <div class="server-status ready" id="serverStatus">✅ Ready for immediate use!</div>
+                            <p style="font-size: 0.9rem; color: #ecf0f1; margin-top: 10px;">
+                                💡 For maximum 70%+ compression, try our <a href="PDF_Optimizer_Launcher.html" style="color: #d4af37;">desktop application</a>
+                            </p>
                         </div>
                     </div>
 
@@ -156,12 +191,12 @@
                                 <div class="stats-list">
                                     <p>✨ Professional Technology by Sage & Team:</p>
                                     <ul>
-                                        <li>🎯 Up to 70% compression guarantee</li>
-                                        <li>🚀 Advanced page-to-images algorithm</li>
+                                        <li>📄 Professional PDF processing</li>
+                                        <li>🚀 Advanced compression technology (coming soon)</li>
                                         <li>🎨 Beautiful interface by Angelique Liora</li>
                                         <li>💰 No subscription fees</li>
-                                        <li>🔒 100% offline operation</li>
-                                        <li>⚡ Instant professional results</li>
+                                        <li>🔒 100% browser-based operation</li>
+                                        <li>⚡ Instant file processing</li>
                                     </ul>
                                 </div>
                             </div>
@@ -215,6 +250,7 @@
                         </div>
                     </div>
                 </div>
+                </div> <!-- End panels-container -->
             </div>
         </main>
         
@@ -246,7 +282,7 @@
         </footer>
     </div>
 
-    <!-- Sage's Page-to-Images Algorithm via Python Backend -->
-    <script src="JavaScript/PDF-Optimizer-Backend.js"></script>
+    <!-- Simple Client-Side PDF Optimization - No Setup Required -->
+    <script src="JavaScript/PDF-Optimizer-Simple.js"></script>
 </body>
 </html>

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>PDF Optimizer Pro - Desktop Application | I Snuck A Book</title>
+    <meta name="description" content="Download and run PDF Optimizer Pro desktop application. Professional PDF compression with 70%+ file size reduction. Free tool by I Snuck A Book publishers.">
+    <meta name="keywords" content="pdf optimizer pro, desktop app, compress pdf, pdf compression, I Snuck A Book, Golden Stone Press">
+    <meta name="author" content="I Snuck A Book - Golden Stone Press">
+    
+    <!-- Styling -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 50%, #722f37 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .logo-container {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .logo-container a {
+            display: inline-block;
+            position: relative;
+            transition: all 0.4s ease;
+            text-decoration: none;
+        }
+
+        .logo-container a::before {
+            content: "🚀 Click to Download!";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #d4af37, #f1c40f);
+            color: #2c3e50;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            opacity: 0;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            z-index: 10;
+            white-space: nowrap;
+        }
+
+        .logo-container a:hover::before {
+            opacity: 1;
+            top: -25px;
+            animation: bounce 0.6s ease-in-out;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-5px); }
+            60% { transform: translateX(-50%) translateY(-3px); }
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 0 0 0 rgba(212, 175, 55, 0.7); }
+            70% { box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5), 0 0 0 15px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+
+        @keyframes glow {
+            0%, 100% { filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.3)); }
+            50% { filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.8)); }
+        }
+
+        .logo {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            animation: pulse 3s infinite;
+        }
+
+        .logo-container a:hover .logo {
+            transform: scale(1.1) rotate(2deg);
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.6);
+            animation: glow 1.5s ease-in-out infinite;
+            border: 3px solid #d4af37;
+        }
+
+        .logo-container a:active .logo {
+            transform: scale(1.05) rotate(0deg);
+            transition: transform 0.1s ease;
+        }
+
+        /* Add sparkle effect */
+        .logo-container a::after {
+            content: "✨";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+
+        .logo-container a:hover::after {
+            opacity: 1;
+            animation: sparkle 0.8s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { 
+                opacity: 0;
+                transform: scale(0.8) rotate(0deg);
+            }
+            50% { 
+                opacity: 1;
+                transform: scale(1.2) rotate(180deg);
+            }
+        }
+
+        h1 {
+            color: #d4af37;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #ecf0f1;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .download-section {
+            margin: 30px 0;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4af37, #f1c40f);
+            color: #2c3e50;
+            text-decoration: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            margin: 10px;
+        }
+
+        .download-btn:hover {
+            background: linear-gradient(135deg, #f1c40f, #d4af37);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+        }
+
+        .download-btn:active {
+            transform: translateY(0);
+        }
+
+        .secondary-btn {
+            background: linear-gradient(135deg, #34495e, #2c3e50) !important;
+            font-size: 1rem !important;
+            padding: 12px 25px !important;
+            opacity: 0.8;
+            border: 1px solid #d4af37;
+        }
+
+        .secondary-btn:hover {
+            background: linear-gradient(135deg, #2c3e50, #34495e) !important;
+            opacity: 1;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(52, 73, 94, 0.4) !important;
+        }
+
+        /* Security Notice Styling */
+        .security-notice {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            border: 2px solid #3498db;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .security-notice h3 {
+            color: #3498db;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .notice-content p {
+            margin-bottom: 15px;
+            color: #ecf0f1;
+            line-height: 1.6;
+        }
+
+        .bypass-steps {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .bypass-steps h4 {
+            color: #d4af37;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .step-by-step {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .step-content strong {
+            color: #d4af37;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .step-content small {
+            color: #bdc3c7;
+            font-size: 0.85rem;
+        }
+
+        .features {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .features h3 {
+            color: #d4af37;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .features ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        .features li {
+            padding: 8px 0;
+            color: #ecf0f1;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .features li::before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+            top: 8px;
+        }
+
+        .instructions {
+            background: rgba(52, 73, 94, 0.3);
+            border: 2px solid #d4af37;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .instructions h3 {
+            color: #d4af37;
+            margin-bottom: 15px;
+        }
+
+        .instructions ol {
+            text-align: left;
+            color: #ecf0f1;
+            padding-left: 20px;
+        }
+
+        .instructions li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .book-promo {
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(114, 47, 55, 0.2);
+            border-radius: 12px;
+            border: 1px solid rgba(114, 47, 55, 0.5);
+        }
+
+        .book-promo h3 {
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+
+        .book-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .book-btn {
+            display: inline-block;
+            background: #722f37;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 1px solid #d4af37;
+        }
+
+        .book-btn:hover {
+            background: #8b1538;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(114, 47, 55, 0.3);
+        }
+
+        .footer {
+            margin-top: 30px;
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .download-btn {
+                padding: 15px 30px;
+                font-size: 1.1rem;
+            }
+
+            .book-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <a href="PDF_Optimizer_Pro_Setup.exe" download>
+                <img src="Images/PDF Optimizer Logo.png" alt="PDF Optimizer Pro Logo" class="logo">
+            </a>
+            <p style="text-align: center; margin-top: 15px; color: #d4af37; font-size: 0.95rem; font-style: italic;">
+                👆 Click the logo to download instantly! 👆
+            </p>
+        </div>
+
+        <h1>PDF Optimizer Pro</h1>
+        <p class="subtitle">Professional installer with PDF Optimizer branding<br>
+        Desktop application achieving 70%+ file size reduction</p>
+
+        <div class="download-section">
+            <p style="color: #ecf0f1; margin-bottom: 15px; text-align: center;">
+                Prefer a traditional button? 
+            </p>
+            <a href="PDF_Optimizer_Pro_Setup.exe" class="download-btn secondary-btn" download>
+                📥 Download PDF Optimizer Pro Setup
+            </a>
+            <p style="color: #bdc3c7; font-size: 0.85rem; text-align: center; margin-top: 8px; font-style: italic;">
+                Same installer as the logo above - your choice!
+            </p>
+        </div>
+
+        <div class="features">
+            <h3>🔥 Powerful Features</h3>
+            <ul>
+                <li>Professional installer with PDF Optimizer logo</li>
+                <li>70%+ file size reduction guaranteed</li>
+                <li>Maintains visual quality and readability</li>
+                <li>Advanced PyMuPDF compression algorithm</li>
+                <li>Multiple quality levels (High, Medium, Low)</li>
+                <li>Batch processing capabilities</li>
+                <li>User-friendly desktop interface with branding</li>
+                <li>No internet connection required after installation</li>
+                <li>Completely free to use</li>
+            </ul>
+        </div>
+
+        <div class="instructions">
+            <h3>📋 How to Use</h3>
+            <ol>
+                <li>Click the logo or download button above to get PDF_Optimizer_Pro_Setup.exe</li>
+                <li><strong>Windows Security Notice:</strong> Windows will show a purple security warning - this is normal for new applications</li>
+                <li><strong>To proceed safely:</strong> Click "More info" → then click "Run anyway" (the app is completely safe)</li>
+                <li>Follow the installation wizard to install PDF Optimizer Pro with logo branding</li>
+                <li>Launch from your desktop shortcut or start menu</li>
+                <li>Select your PDF file, choose compression level, and optimize!</li>
+            </ol>
+        </div>
+
+        <div class="security-notice">
+            <h3>🛡️ Windows Security Notice</h3>
+            <div class="notice-content">
+                <p><strong>Why does Windows show a warning?</strong></p>
+                <p>Windows Defender SmartScreen shows warnings for applications that haven't been downloaded by many users yet. This is a normal security feature - our software is completely safe!</p>
+                
+                <div class="bypass-steps">
+                    <h4>📱 Easy Bypass Steps:</h4>
+                    <div class="step-by-step">
+                        <div class="step">
+                            <span class="step-number">1</span>
+                            <div class="step-content">
+                                <strong>Purple Warning Appears</strong><br>
+                                <small>"Windows protected your PC" message shows</small>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">2</span>
+                            <div class="step-content">
+                                <strong>Click "More info"</strong><br>
+                                <small>Small link at the bottom of the warning</small>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">3</span>
+                            <div class="step-content">
+                                <strong>Click "Run anyway"</strong><br>
+                                <small>Button appears after clicking "More info"</small>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">4</span>
+                            <div class="step-content">
+                                <strong>Installation Begins!</strong><br>
+                                <small>PDF Optimizer Pro installs normally</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <p style="margin-top: 15px; font-weight: bold; color: #2ecc71;">
+                    ✅ This software is safe, tested, and developed by professional developers
+                </p>
+            </div>
+        </div>
+
+        <div class="book-promo">
+            <h3>📚 Discover Our Book Collection</h3>
+            <p>While you're optimizing PDFs, explore our amazing children's books and publications!</p>
+            <div class="book-links">
+                <a href="Books-Products.html" class="book-btn">📖 View All Books</a>
+                <a href="Childrens-Books.html" class="book-btn">🧸 Children's Books</a>
+                <a href="About.html" class="book-btn">ℹ️ About Us</a>
+                <a href="index.html" class="book-btn">🏠 Home</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 I Snuck A Book - Golden Stone Press</p>
+            <p>Professional PDF tools and quality publications</p>
+        </div>
+    </div>
+
+    <script>
+        // Add download tracking and feedback
+        document.querySelector('.download-btn').addEventListener('click', function() {
+            // Show feedback message
+            setTimeout(() => {
+                alert('PDF Optimizer Pro Setup downloaded! Run the installer to install the application with PDF Optimizer branding and start compressing PDFs with 70%+ size reduction.');
+            }, 1000);
+        });
+
+        // Add logo click animation
+        document.querySelector('.logo').addEventListener('click', function() {
+            this.style.transform = 'rotate(360deg) scale(1.1)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 600);
+        });
+    </script>
+</body>
+</html>
