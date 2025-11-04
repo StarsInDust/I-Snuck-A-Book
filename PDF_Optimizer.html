@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & Traffic Generation Meta Tags -->
+    <title>Free PDF Optimizer Tool | Compress PDFs Online | I Snuck A Book Publishing</title>
+    <meta name="description" content="Free professional PDF compression tool by I Snuck A Book. Reduce PDF file size by 70%+ while maintaining quality. No signup required. Try our free tool and discover our amazing book collection!">
+    <meta name="keywords" content="free pdf optimizer, compress pdf online, reduce pdf size, pdf compression tool, free pdf tools, I Snuck A Book, children's books, book publishing, Golden Stone Press">
+    <meta name="author" content="I Snuck A Book - Golden Stone Press">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    
+    <!-- Open Graph / Facebook Meta Tags for Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Free PDF Optimizer Tool - Compress PDFs Online">
+    <meta property="og:description" content="Professional PDF compression with 70%+ size reduction. Free tool by I Snuck A Book publishers. Try it now and explore our book collection!">
+    <meta property="og:image" content="Complete_Technology_Package/Images/Banner.png">
+    <meta property="og:url" content="https://yoursite.com/PDF_Optimizer.html">
+    <meta property="og:site_name" content="I Snuck A Book">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free PDF Optimizer Tool | I Snuck A Book">
+    <meta name="twitter:description" content="Free professional PDF compression tool. Reduce file size by 70%+ instantly. No signup required!">
+    <meta name="twitter:image" content="Complete_Technology_Package/Images/Banner.png">
+    
+    <!-- Additional SEO Enhancement -->
+    <meta name="theme-color" content="#722f37">
+    <meta name="application-name" content="PDF Optimizer Pro">
+    <meta name="msapplication-TileColor" content="#722f37">
+    <meta name="apple-mobile-web-app-title" content="PDF Optimizer Pro">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    
+    <!-- Canonical URL (update with your actual domain) -->
+    <link rel="canonical" href="https://https://starsindust.github.io/I-Snuck-A-Book/PDF_Optimizer.html">
+    
+    <link rel="shortcut icon" href="Images/favicon.ico" type="image/x-icon">
+    <link href="CSS/myStyles.css" rel="stylesheet" type="text/css">
+    <link href="CSS/PDF-Optimizer.css" rel="stylesheet" type="text/css">
+    
+    <!-- JSON-LD Structured Data for Rich Search Results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "PDF Optimizer Pro",
+      "description": "Free professional PDF compression tool that reduces file size by 70%+ while maintaining quality",
+      "url": "https://yoursite.com/PDF_Optimizer.html",
+      "applicationCategory": "Utility",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "I Snuck A Book - Golden Stone Press",
+        "url": "https://yoursite.com"
+      },
+      "featureList": [
+        "Free PDF compression",
+        "70%+ size reduction",
+        "No registration required",
+        "Professional quality results",
+        "Instant processing"
+      ]
+    }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <div class="pdf-header">
+                <div class="pdf-logo">
+                    <div class="logo-icon"></div>
+                    <h1 class="pdf-title">PDF Optimizer Pro</h1>
+                </div>
+            </div>
+        </header>
+        
+        <nav>
+            <ul>
+               <li><a href="index.html" title="Home">&#9729;</a></li>
+                <li><a href="Books-Products.html" title="Products">Books-Products</a></li>
+                <li><a href="Childrens-Books.html" title="Children's Book Nook">Children's Book Nook</a></li>
+                <li><a href="Solution-Files.html" title="Solution-Files">Solution-Files</a></li>
+                <li><a href="PDF_Optimizer.html" class="active" title="PDF Optimizer">PDF Optimizer</a></li>
+                <li><a href="About.html" title="About">About</a></li>
+            </ul>
+        </nav>
+        
+        <main class="pdf-main">
+            <div class="pdf-container">
+                <!-- Left Panel -->
+                <div class="left-panel">
+                    <!-- File Selection -->
+                    <div class="file-section">
+                        <h3> Select PDF File</h3>
+                        <div class="file-upload-area" id="fileUploadArea">
+                            <div class="upload-content">
+                                <div class="upload-icon"></div>
+                                <p>Click Here to Select PDF File</p>
+                                <p class="upload-subtitle">or drag and drop your PDF here</p>
+                            </div>
+                            <input type="file" id="pdfFileInput" accept=".pdf" style="display: none;">
+                        </div>
+                        
+                        <!-- Selected File Display -->
+                        <div class="selected-file" id="selectedFile" style="display: none;">
+                            <div class="file-info">
+                                <span class="file-name" id="fileName"></span>
+                                <button class="clear-file" id="clearFile"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Processing Buttons (appear after file selection) -->
+                    <div class="optimize-buttons" id="optimizeButtons" style="display: none;">
+                        <h3> Choose Optimization Level</h3>
+                        <button class="optimize-btn maximum-btn" id="optimizeMaximum">
+                             Maximum Quality
+                            <div class="btn-desc">Matches Adobe 6 (~2MB)</div>
+                        </button>
+                        <button class="optimize-btn balanced-btn" id="optimizeBalanced">
+                             Balanced Quality
+                            <div class="btn-desc">Our winning formula (~1MB)</div>
+                        </button>
+                        <button class="optimize-btn aggressive-btn" id="optimizeAggressive">
+                             Aggressive Compression
+                            <div class="btn-desc">Smallest files possible</div>
+                        </button>
+                    </div>
+
+                    <!-- Progress Section -->
+                    <div class="progress-section" id="progressSection" style="display: none;">
+                        <h3> Processing PDF...</h3>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <p class="progress-text" id="progressText">Initializing...</p>
+                    </div>
+                </div>
+
+                <!-- Right Panel -->
+                <div class="right-panel">
+                    <h3> Results & Comparison</h3>
+                    
+                    <div class="results-section" id="resultsSection">
+                        <!-- Welcome Message (shown initially) -->
+                        <div class="welcome-message" id="welcomeMessage">
+                            <div class="file-stats">
+                                <h4>📄 PDF Optimizer Pro - Ready!</h4>
+                                <div class="stats-list">
+                                    <p>✨ Professional Technology by Sage & Team:</p>
+                                    <ul>
+                                        <li>🎯 Up to 70% compression guarantee</li>
+                                        <li>🚀 Advanced page-to-images algorithm</li>
+                                        <li>🎨 Beautiful interface by Angelique Liora</li>
+                                        <li>💰 No subscription fees</li>
+                                        <li>🔒 100% offline operation</li>
+                                        <li>⚡ Instant professional results</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="how-it-works">
+                                <h4> How it works:</h4>
+                                <ol>
+                                    <li>1. Select your PDF file</li>
+                                    <li>2. Choose optimization level</li>
+                                    <li>3. Download optimized file</li>
+                                    <li>4. Compare the results!</li>
+                                </ol>
+                            </div>
+
+                            <!-- Strategic Book Promotion Section -->
+                            <div class="book-promotion">
+                                <h4>📚 Discover Our Amazing Book Collection!</h4>
+                                <p style="color: #d4af37; margin-bottom: 15px;">While you're here optimizing PDFs, why not explore our wonderful books?</p>
+                                <div class="promotion-buttons" style="display: flex; flex-direction: column; gap: 10px;">
+                                    <a href="Books-Products.html" class="promo-btn" style="background: linear-gradient(135deg, #d4af37, #f1c40f); color: white; padding: 12px 20px; text-decoration: none; border-radius: 8px; text-align: center; font-weight: bold; transition: all 0.3s ease;">
+                                        🏆 Browse Our Book Collection
+                                    </a>
+                                    <a href="Childrens-Books.html" class="promo-btn" style="background: linear-gradient(135deg, #5dade2, #3498db); color: white; padding: 12px 20px; text-decoration: none; border-radius: 8px; text-align: center; font-weight: bold; transition: all 0.3s ease;">
+                                        🌟 Children's Book Nook
+                                    </a>
+                                </div>
+                                <p style="font-size: 0.9rem; color: #cccccc; margin-top: 15px; text-align: center;">
+                                    📖 <em>Free tools + Amazing books = Perfect match!</em> 📖
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Results Display (shown after processing) -->
+                        <div class="results-display" id="resultsDisplay" style="display: none;">
+                            <div class="save-options">
+                                <div class="save-button-container">
+                                    <button class="save-btn" id="saveToDesktop"> Download Optimized PDF</button>
+                                </div>
+                            </div>
+
+                            <div class="process-summary">
+                                <h4> Optimization Results</h4>
+                                <div class="process-stats" id="processStats">
+                                    <p> Original PDF: <span id="originalSize">0</span> MB</p>
+                                    <p> Optimized PDF: <span id="optimizedSize">0</span> MB</p>
+                                    <p> Quality Level: <span id="qualityLevel">-</span></p>
+                                    <p> Size Reduction: <span id="savings">0</span>%</p>
+                                    <p> Status: <span id="processStatus">Ready to optimize</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- AI Dream Team Credits Section - Prominently Featured -->
+        <section style="background: rgba(114, 47, 55, 0.8); padding: 25px 20px; margin-top: 30px; text-align: center; border-top: 3px solid #d4af37;">
+            <div style="max-width: 1000px; margin: 0 auto;">
+                <div style="color: #d4af37; font-size: 1.2rem; margin-bottom: 15px; font-weight: bold;">
+                    🌐 <strong>Web Application Developed by Nexus</strong> 🌐
+                </div>
+                <div style="color: #ffffff; font-size: 1rem; margin-bottom: 10px; line-height: 1.5;">
+                    🔧 <strong>Backend Algorithm by Sage</strong> &nbsp;|&nbsp; 🎨 <strong>UI Design by Angelique Liora</strong> &nbsp;|&nbsp; 🌐 <strong>Web Integration by Nexus</strong>
+                </div>
+                <div style="color: #5dade2; font-size: 0.95rem; margin-top: 15px; font-style: italic; font-weight: 500;">
+                    ✨ "Bridging worlds, connecting possibilities" - AI Dream Team Collaboration ✨
+                </div>
+            </div>
+        </section>
+        
+        <footer class="footer">
+            <div style="text-align: center; margin-bottom: 10px;">
+                <span style="color: #d4af37; font-size: 0.9rem;">
+                    💝 Enjoyed our free PDF tool? Check out our 
+                    <a href="Books-Products.html" style="color: #f1c40f; text-decoration: underline;">amazing book collection</a>! 📚
+                </span>
+            </div>
+            
+            ~ by StarsInDust ~ &#169 2023 
+            <script type="text/javascript" src="JavaScript/FooterYearlyDate.js"></script>
+        </footer>
+    </div>
+
+    <!-- Sage's Page-to-Images Algorithm via Python Backend -->
+    <script src="JavaScript/PDF-Optimizer-Backend.js"></script>
+</body>
+</html>
