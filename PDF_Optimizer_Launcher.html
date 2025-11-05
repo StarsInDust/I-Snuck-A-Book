@@ -22,24 +22,174 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #34495e 0%, #2c3e50 50%, #722f37 100%);
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
             color: #ffffff;
             padding: 20px;
+            margin: 0;
         }
 
+        /* Main Container - Desktop First Approach */
         .container {
             background: rgba(255, 255, 255, 0.1);
             border-radius: 20px;
-            padding: 40px;
-            text-align: center;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            max-width: 600px;
+            max-width: 1400px;
+            width: 95%;
+            margin: 20px auto;
+            padding: 40px;
+        }
+
+        /* Desktop Layout - Two Column Grid */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+            margin-bottom: 40px;
+        }
+
+        /* Left Column - Logo and Download */
+        .left-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        /* Instructions in left column should be left-aligned for readability */
+        .left-column .instructions {
+            text-align: left;
             width: 100%;
+            max-width: 500px;
+            margin-top: 30px;
+        }
+        
+        .left-column .instructions h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Right Column - Features and Instructions */
+        .right-column {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .page-header h1 {
+            color: #d4af37;
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .page-header .subtitle {
+            font-size: 1.3rem;
+            color: #ecf0f1;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        /* Responsive Media Queries */
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 1000px;
+                padding: 30px;
+            }
+            
+            .main-content {
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 968px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .left-column {
+                order: 1;
+            }
+            
+            .right-column {
+                order: 2;
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+                width: calc(100% - 20px);
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .page-header .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .logo {
+                max-width: 250px !important;
+            }
+            
+            .main-content {
+                gap: 30px;
+            }
+            
+            .book-links {
+                flex-direction: column !important;
+                align-items: center;
+            }
+            
+            .step-by-step {
+                gap: 10px;
+            }
+            
+            .step {
+                padding: 10px;
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 15px;
+                border-radius: 15px;
+            }
+            
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .logo {
+                max-width: 200px !important;
+            }
+            
+            .download-btn {
+                padding: 12px 20px !important;
+                font-size: 1rem !important;
+            }
         }
 
         .logo-container {
@@ -148,22 +298,11 @@
             }
         }
 
-        h1 {
-            color: #d4af37;
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            color: #ecf0f1;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
+        /* Remove duplicate h1 and subtitle styles - now handled by page-header */
 
         .download-section {
             margin: 30px 0;
+            width: 100%;
         }
 
         .download-btn {
@@ -411,30 +550,54 @@
 
 <body>
     <div class="container">
-        <div class="logo-container">
-            <a href="PDF_Optimizer_Pro_Setup.exe" download>
-                <img src="Images/PDF Optimizer Logo.png" alt="PDF Optimizer Pro Logo" class="logo">
-            </a>
-            <p style="text-align: center; margin-top: 15px; color: #d4af37; font-size: 0.95rem; font-style: italic;">
-                👆 Click the logo to download instantly! 👆
-            </p>
-        </div>
+        <!-- Page Header -->
+        <header class="page-header">
+            <h1>PDF Optimizer Pro</h1>
+            <p class="subtitle">Professional installer with PDF Optimizer branding<br>
+            Desktop application achieving 70%+ file size reduction</p>
+        </header>
 
-        <h1>PDF Optimizer Pro</h1>
-        <p class="subtitle">Professional installer with PDF Optimizer branding<br>
-        Desktop application achieving 70%+ file size reduction</p>
+        <!-- Main Content Grid -->
+        <div class="main-content">
+            <!-- Left Column: Logo and Download -->
+            <div class="left-column">
+                <div class="logo-container">
+                    <a href="PDF_Optimizer_Pro_Setup.exe" download>
+                        <img src="Images/PDF Optimizer Logo.png" alt="PDF Optimizer Pro Logo" class="logo">
+                    </a>
+                    <p style="text-align: center; margin-top: 15px; color: #d4af37; font-size: 0.95rem; font-style: italic;">
+                        👆 Click the logo to download instantly! 👆
+                    </p>
+                </div>
 
-        <div class="download-section">
-            <p style="color: #ecf0f1; margin-bottom: 15px; text-align: center;">
-                Prefer a traditional button? 
-            </p>
-            <a href="PDF_Optimizer_Pro_Setup.exe" class="download-btn secondary-btn" download>
-                📥 Download PDF Optimizer Pro Setup
-            </a>
-            <p style="color: #bdc3c7; font-size: 0.85rem; text-align: center; margin-top: 8px; font-style: italic;">
-                Same installer as the logo above - your choice!
-            </p>
-        </div>
+                <div class="download-section">
+                    <p style="color: #ecf0f1; margin-bottom: 15px; text-align: center;">
+                        Prefer a traditional button? 
+                    </p>
+                    <a href="PDF_Optimizer_Pro_Setup.exe" class="download-btn secondary-btn" download>
+                        📥 Download PDF Optimizer Pro Setup
+                    </a>
+                    <p style="color: #bdc3c7; font-size: 0.85rem; text-align: center; margin-top: 8px; font-style: italic;">
+                        Same installer as the logo above - your choice!
+                    </p>
+                </div>
+
+                <!-- How to Use Instructions (moved to left column for balance) -->
+                <div class="instructions">
+                    <h3>📋 How to Use</h3>
+                    <ol>
+                        <li>Click the logo or download button above to get PDF_Optimizer_Pro_Setup.exe</li>
+                        <li><strong>Windows Security Notice:</strong> Windows will show a purple security warning - this is normal for new applications</li>
+                        <li><strong>To proceed safely:</strong> Click "More info" → then click "Run anyway" (the app is completely safe)</li>
+                        <li>Follow the installation wizard to install PDF Optimizer Pro with logo branding</li>
+                        <li>Launch from your desktop shortcut or start menu</li>
+                        <li>Select your PDF file, choose compression level, and optimize!</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Right Column: Features and Security Info -->
+            <div class="right-column">
 
         <div class="features">
             <h3>🔥 Powerful Features</h3>
@@ -449,18 +612,6 @@
                 <li>No internet connection required after installation</li>
                 <li>Completely free to use</li>
             </ul>
-        </div>
-
-        <div class="instructions">
-            <h3>📋 How to Use</h3>
-            <ol>
-                <li>Click the logo or download button above to get PDF_Optimizer_Pro_Setup.exe</li>
-                <li><strong>Windows Security Notice:</strong> Windows will show a purple security warning - this is normal for new applications</li>
-                <li><strong>To proceed safely:</strong> Click "More info" → then click "Run anyway" (the app is completely safe)</li>
-                <li>Follow the installation wizard to install PDF Optimizer Pro with logo branding</li>
-                <li>Launch from your desktop shortcut or start menu</li>
-                <li>Select your PDF file, choose compression level, and optimize!</li>
-            </ol>
         </div>
 
         <div class="security-notice">
@@ -508,7 +659,10 @@
                 </p>
             </div>
         </div>
+            </div> <!-- End right-column -->
+        </div> <!-- End main-content -->
 
+        <!-- Full Width Book Promotion -->
         <div class="book-promo">
             <h3>📚 Discover Our Book Collection</h3>
             <p>While you're optimizing PDFs, explore our amazing children's books and publications!</p>
