@@ -1,0 +1,125 @@
+@charset "utf-8";
+/* CSS Document */
+
+* Default styles for all screens */
+.gridLayout {
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+  /* Default: 2 columns on large screens */
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.responsiveItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  border-radius: 8px;
+}
+
+/* .book-feature removed - no longer needed */
+
+.book-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.book-title {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.book-cover {
+  width: 100%;
+  height: auto;
+  max-width: 250px;
+}
+
+.Special {
+	text-align: center;
+	font-family: 'Stalemate', cursive;
+	font-size: 3.1em;
+	font-weight: 800;
+	color: #f5e5c6;
+	padding-top: 10px;
+	margin-top: 0px;
+	margin-bottom: 10px;
+	font-weight: lighter;
+	padding-bottom: 2px;
+}
+
+/* 💻 Large screens (desktops) - 3+ columns */
+@media screen and (min-width: 1200px) {
+  .gridLayout {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+}
+
+/* 🧳 Medium-Large screens (small desktops/large tablets) - 2 columns */
+@media screen and (max-width: 1199px) and (min-width: 901px) {
+  .gridLayout {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+/* 🧳 Medium screens (tablets) - 1-2 columns */
+@media screen and (max-width: 900px) and (min-width: 601px) {
+  .gridLayout {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .responsiveItem {
+    padding: 12px;
+  }
+}
+
+/* 📱 Small screens (phones) - 1 column */
+@media screen and (max-width: 600px) {
+  .gridLayout {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .responsiveItem {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .book-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .Special {
+    font-size: 2.2em;
+    margin-bottom: 8px;
+  }
+
+  aside ul {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1em;
+  }
+}  
+   

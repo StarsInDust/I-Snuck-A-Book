@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Sage's PDF Compression</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 50px auto; padding: 20px; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        button { background: #34495e; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #2c3e50; }
+        .status { padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .ready { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <h1>🔧 Test Sage's PDF Compression Integration</h1>
+    
+    <div class="test-section">
+        <h3>Step 1: Start Web Server</h3>
+        <p>First, run <code>start_web_server.bat</code> to launch Sage's compression engine.</p>
+        <button onclick="testServerConnection()">Test Server Connection</button>
+        <div id="serverStatus"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>Step 2: Test PDF Compression</h3>
+        <input type="file" id="pdfFile" accept=".pdf" />
+        <br><br>
+        <label>Quality: 
+            <select id="quality">
+                <option value="high">High (Best Quality)</option>
+                <option value="medium" selected>Medium (Balanced)</option>
+                <option value="low">Low (Smallest Size)</option>
+            </select>
+        </label>
+        <br><br>
+        <button onclick="testCompression()">Test Compression with Sage's Algorithm</button>
+        <div id="compressionStatus"></div>
+    </div>
+
+    <script>
+        const webServerUrl = 'http://localhost:8000';
+        
+        async function testServerConnection() {
+            const statusDiv = document.getElementById('serverStatus');
+            statusDiv.innerHTML = 'Testing connection...';
+            
+            try {
+                const response = await fetch(`${webServerUrl}/health`);
+                const data = await response.json();
+                
+                if (data.status === 'ready') {
+                    statusDiv.innerHTML = `<div class="status ready">✅ Server Ready! Sage's compression engine is running.</div>`;
+                } else {
+                    statusDiv.innerHTML = `<div class="status error">❌ Server responded but not ready</div>`;
+                }
+            } catch (error) {
+                statusDiv.innerHTML = `<div class="status error">❌ Server not running. Please start start_web_server.bat first.</div>`;
+            }
+        }
+        
+        async function testCompression() {
+            const fileInput = document.getElementById('pdfFile');
+            const quality = document.getElementById('quality').value;
+            const statusDiv = document.getElementById('compressionStatus');
+            
+            if (!fileInput.files[0]) {
+                statusDiv.innerHTML = `<div class="status error">❌ Please select a PDF file first</div>`;
+                return;
+            }
+            
+            statusDiv.innerHTML = 'Testing compression...';
+            
+            try {
+                // Test server connection first
+                const healthResponse = await fetch(`${webServerUrl}/health`);
+                if (!healthResponse.ok) {
+                    throw new Error('Server not running');
+                }
+                
+                // Prepare file for upload
+                const formData = new FormData();
+                formData.append('pdf', fileInput.files[0]);
+                formData.append('quality', quality);
+                
+                statusDiv.innerHTML = 'Uploading to Sage\'s compression engine...';
+                
+                // Send for compression
+                const response = await fetch(`${webServerUrl}/compress`, {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || 'Compression failed');
+                }
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    statusDiv.innerHTML = `
+                        <div class="status ready">
+                            ✅ Compression Successful!<br>
+                            Original: ${result.original_size}<br>
+                            Compressed: ${result.compressed_size}<br>
+                            Savings: ${result.savings}<br>
+                            Algorithm: ${result.algorithm}
+                        </div>
+                    `;
+                    
+                    // Download the compressed file
+                    const downloadResponse = await fetch(`${webServerUrl}/download/${result.download_id}`);
+                    const blob = await downloadResponse.blob();
+                    
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.style.display = 'none';
+                    a.href = url;
+                    a.download = `compressed_${fileInput.files[0].name}`;
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                    
+                } else {
+                    throw new Error(result.error || 'Unknown error');
+                }
+                
+            } catch (error) {
+                statusDiv.innerHTML = `<div class="status error">❌ Error: ${error.message}</div>`;
+            }
+        }
+        
+        // Test connection on page load
+        window.onload = testServerConnection;
+    </script>
+</body>
+</html>
