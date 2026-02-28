@@ -777,6 +777,33 @@ body footer {
 	
 	}
 }
+
+/* ==================== 
+   RESPONSIVE NAVIGATION - VERTICAL MENU FOR MOBILE
+   ==================== */
+
+@media screen and (max-width: 768px) {
+	/* Make navigation vertical on small screens */
+	nav ul {
+		flex-direction: column;
+	}
+	
+	nav ul li {
+		flex-grow: 0;
+		width: 100%;
+	}
+	
+	nav ul li a {
+		padding: 12px 15px;
+		border-bottom: 1px solid rgba(158, 140, 105, 0.2);
+		font-size: 0.9rem;
+	}
+	
+	nav ul li:last-child a {
+		border-bottom: none;
+	}
+}
+
 .special-main-container #center-content {
 	
 	padding-right: 0px;

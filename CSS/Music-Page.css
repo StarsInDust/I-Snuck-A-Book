@@ -1,0 +1,507 @@
+@charset "utf-8";
+/* CSS Document - Music Page Specific Styles */
+
+/* ==================== 
+   SPACE/COSMIC THEME
+   ==================== */
+
+/* Starry Background Animation */
+body {
+    background: linear-gradient(to bottom, #000000 0%, #0a0a1a 50%, #000000 100%);
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(2px 2px at 20% 30%, white, transparent),
+        radial-gradient(2px 2px at 60% 70%, white, transparent),
+        radial-gradient(1px 1px at 50% 50%, white, transparent),
+        radial-gradient(1px 1px at 80% 10%, white, transparent),
+        radial-gradient(2px 2px at 90% 60%, white, transparent),
+        radial-gradient(1px 1px at 33% 80%, white, transparent),
+        radial-gradient(1px 1px at 15% 60%, white, transparent);
+    background-size: 200% 200%;
+    background-position: 0% 0%;
+    animation: stars 200s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.6;
+}
+
+@keyframes stars {
+    from {
+        background-position: 0% 0%;
+    }
+    to {
+        background-position: 100% 100%;
+    }
+}
+
+#container {
+    position: relative;
+    z-index: 1;
+}
+
+/* ==================== 
+   TYPOGRAPHY - Consistent with Site
+   ==================== */
+
+.mainTitle.music-title {
+    font-family: Georgia, "Times New Roman", Times, serif !important;
+    font-size: 48px !important;
+    font-weight: bold !important;
+    color: #E7C88F !important;
+    text-align: center !important;
+    margin-bottom: 10px !important;
+    text-shadow: 
+        0 0 10px rgba(231, 200, 143, 0.8),
+        0 0 20px rgba(231, 200, 143, 0.5),
+        2px 2px 4px rgba(0, 0, 0, 0.8) !important;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+
+.music-subtitle {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 24px;
+    font-weight: 300;
+    font-variant: small-caps;
+    color: #C4B97B;
+    text-align: center;
+    letter-spacing: 12px;
+    margin-top: 0;
+    margin-bottom: 30px;
+    text-shadow: 
+        0 0 8px rgba(196, 185, 123, 0.6),
+        1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* ==================== 
+   MUSIC PAGE LAYOUT
+   ==================== */
+
+.music-main-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 20px;
+    box-shadow: 
+        0 0 30px rgba(231, 200, 143, 0.2),
+        inset 0 0 50px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.music-intro {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 30px 20px;
+}
+
+.music-description {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #E7C88F;
+    max-width: 800px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* ==================== 
+   ALBUM SHOWCASE
+   ==================== */
+
+.album-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin: 60px 0;
+    padding: 20px;
+}
+
+.album-card {
+    background: linear-gradient(135deg, rgba(17, 17, 17, 0.9) 0%, rgba(34, 34, 51, 0.9) 100%);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.4s ease;
+    box-shadow: 
+        0 8px 25px rgba(0, 0, 0, 0.6),
+        0 0 15px rgba(231, 200, 143, 0.1);
+    border: 1px solid rgba(231, 200, 143, 0.2);
+}
+
+.album-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 
+        0 15px 40px rgba(0, 0, 0, 0.8),
+        0 0 30px rgba(231, 200, 143, 0.4),
+        inset 0 0 20px rgba(231, 200, 143, 0.05);
+    border-color: rgba(231, 200, 143, 0.5);
+}
+
+.album-cover {
+    margin-bottom: 25px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.album-cover img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(231, 200, 143, 0.2);
+    transition: transform 0.4s ease;
+}
+
+.album-card:hover .album-cover img {
+    transform: scale(1.05);
+}
+
+.album-info h2 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 26px;
+    color: #E7C88F;
+    margin: 15px 0 10px 0;
+    text-shadow: 
+        0 0 10px rgba(231, 200, 143, 0.5),
+        1px 1px 3px rgba(0, 0, 0, 0.8);
+    letter-spacing: 2px;
+}
+
+.artist-name {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 18px;
+    color: #C4B97B;
+    margin: 10px 0;
+    font-style: italic;
+}
+
+.release-info {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 14px;
+    color: #9e8c69;
+    margin: 5px 0;
+}
+
+/* ==================== 
+   STREAMING PLATFORMS
+   ==================== */
+
+.streaming-platforms {
+    margin: 60px 0;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, rgba(0, 38, 84, 0.3) 0%, rgba(17, 17, 17, 0.3) 100%);
+    border-radius: 15px;
+    border: 1px solid rgba(231, 200, 143, 0.15);
+}
+
+.streaming-platforms h3 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 28px;
+    color: #E7C88F;
+    text-align: center;
+    margin-bottom: 40px;
+    text-shadow: 
+        0 0 10px rgba(231, 200, 143, 0.5),
+        1px 1px 3px rgba(0, 0, 0, 0.8);
+    letter-spacing: 2px;
+}
+
+.platform-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+}
+
+.platform-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 15px;
+    background: rgba(17, 17, 17, 0.8);
+    border-radius: 12px;
+    text-decoration: none;
+    color: #C4B97B;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    min-height: 120px;
+}
+
+.platform-link:hover {
+    transform: translateY(-5px);
+    border-color: #E7C88F;
+    background: rgba(231, 200, 143, 0.15);
+    color: #E7C88F;
+    box-shadow: 
+        0 8px 25px rgba(0, 0, 0, 0.7),
+        0 0 20px rgba(231, 200, 143, 0.3);
+}
+
+.platform-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(231, 200, 143, 0.5);
+}
+
+.platform-link span {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Platform-specific colors on hover */
+.platform-link.spotify:hover {
+    border-color: #1DB954;
+    box-shadow: 
+        0 8px 25px rgba(29, 185, 84, 0.4),
+        0 0 20px rgba(29, 185, 84, 0.2);
+}
+
+.platform-link.apple-music:hover {
+    border-color: #FC3C44;
+    box-shadow: 
+        0 8px 25px rgba(252, 60, 68, 0.4),
+        0 0 20px rgba(252, 60, 68, 0.2);
+}
+
+.platform-link.amazon-music:hover {
+    border-color: #FF9900;
+    box-shadow: 
+        0 8px 25px rgba(255, 153, 0, 0.4),
+        0 0 20px rgba(255, 153, 0, 0.2);
+}
+
+.platform-link.youtube-music:hover {
+    border-color: #FF0000;
+    box-shadow: 
+        0 8px 25px rgba(255, 0, 0, 0.4),
+        0 0 20px rgba(255, 0, 0, 0.2);
+}
+
+.platform-link.tidal:hover {
+    border-color: #00FFFF;
+    box-shadow: 
+        0 8px 25px rgba(0, 255, 255, 0.4),
+        0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+.platform-link.deezer:hover {
+    border-color: #FF006C;
+    box-shadow: 
+        0 8px 25px rgba(255, 0, 108, 0.4),
+        0 0 20px rgba(255, 0, 108, 0.2);
+}
+
+.coming-soon-note {
+    text-align: center;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 14px;
+    color: #C4B97B;
+    font-style: italic;
+    margin-top: 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* ==================== 
+   ARTIST BIO SECTION
+   ==================== */
+
+.artist-bio {
+    margin: 60px auto 40px auto;
+    padding: 40px;
+    max-width: 800px;
+    background: linear-gradient(135deg, rgba(17, 17, 17, 0.9) 0%, rgba(0, 38, 84, 0.2) 100%);
+    border-radius: 15px;
+    border: 1px solid rgba(231, 200, 143, 0.2);
+    box-shadow: 
+        0 8px 25px rgba(0, 0, 0, 0.6),
+        inset 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.artist-bio h3 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 26px;
+    color: #E7C88F;
+    text-align: center;
+    margin-bottom: 25px;
+    text-shadow: 
+        0 0 10px rgba(231, 200, 143, 0.5),
+        1px 1px 3px rgba(0, 0, 0, 0.8);
+    letter-spacing: 2px;
+}
+
+.artist-bio p {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #eed9b0;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* ==================== 
+   RESPONSIVE DESIGN
+   ==================== */
+
+@media screen and (max-width: 768px) {
+    /* Vertical navigation for mobile */
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav ul li {
+        flex-grow: 0;
+        width: 100%;
+    }
+    
+    nav ul li a {
+        padding: 12px 15px;
+        border-bottom: 1px solid rgba(158, 140, 105, 0.2);
+        font-size: 0.9rem;
+    }
+    
+    nav ul li:last-child a {
+        border-bottom: none;
+    }
+
+    .mainTitle.music-title {
+        font-size: 36px !important;
+        letter-spacing: 4px;
+    }
+
+    .music-subtitle {
+        font-size: 18px;
+        letter-spacing: 6px;
+    }
+
+    .music-description {
+        font-size: 16px;
+    }
+
+    .album-showcase {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .platform-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .streaming-platforms h3 {
+        font-size: 22px;
+    }
+
+    .artist-bio {
+        padding: 25px;
+    }
+
+    .music-main-container {
+        margin: 20px auto;
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .mainTitle.music-title {
+        font-size: 28px !important;
+        letter-spacing: 2px;
+    }
+
+    .music-subtitle {
+        font-size: 16px;
+        letter-spacing: 4px;
+    }
+
+    .platform-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .album-card {
+        padding: 20px;
+    }
+}
+
+/* ==================== 
+   FOOTER OVERRIDE FOR MUSIC PAGE
+   ==================== */
+
+.footer {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 38, 84, 0.5) 100%);
+    border: 1px solid rgba(231, 200, 143, 0.15);
+}
+
+/* ==================== 
+   CUSTOM AWEDAE BANNER - RESPONSIVE
+   ==================== */
+
+/* Small screens - 425px banner */
+@media screen and (min-width: 300px) {
+    #banner-img.music {
+        height: 110px;
+        position: relative;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-image: url(../Images/Awedae_425.png);
+        box-shadow: 2px 3px 8px black;
+    }
+}
+
+/* Medium screens - 625px banner */
+@media screen and (min-width: 600px) {
+    #banner-img.music {
+        height: 160px;
+        position: relative;
+        background-image: url(../Images/Awedae_625.png);
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-color: #000000;
+        box-shadow: 2px 3px 8px black;
+    }
+}
+
+/* Large screens - 825px banner */
+@media screen and (min-width: 825px) {
+    #banner-img.music {
+        height: 300px;
+        position: relative;
+        background-image: url(../Images/Awedae_825.png);
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        box-shadow: 2px 3px 8px black;
+    }
+}
+
+/* Extra large screens - 1200px banner */
+@media screen and (min-width: 1198px) {
+    #banner-img.music {
+        height: 430px;
+        position: relative;
+        background-image: url(../Images/Awedae_1200.png);
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        border-radius: 1em;
+        box-shadow: 2px 3px 8px black;
+    }
+}
