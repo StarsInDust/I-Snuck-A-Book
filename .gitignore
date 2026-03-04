@@ -1,0 +1,10 @@
+# Large files and archives
+*.zip
+*.rar
+*.7z
+*.tar.gz
+Zips/
+
+# Temporary files
+*.tmp
+*.temp
